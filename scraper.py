@@ -33,16 +33,16 @@ def send_mail():
     server.starttls()
     server.ehlo()
 
-    server.login('gimitbhatt@gmail.com', 'fjmdbkhtmgvgwcra')
+    server.login('<EmailId>', '<email App password>')
     subject = 'Price fell down!'
     body = 'check amazon link https://www.amazon.in/Test-Exclusive-2051-Multi-Storage/dp/B086KF4FZF/ref=sr_1_1?dchild=1&keywords=s20&qid=1615455723&sr=8-1'
     msg = f'Subject:{subject} \n\n {body}'
 
-    server.sendmail('gimitbhatt@gmail.com', 'jimitbhatt.w@gmail.com', msg)
+    server.sendmail('<FromEmail>', '<ToEmail', msg)
     print('EMAIL SENT!!!')
     server.quit()
 
 
 while(True):
     check_price()
-    time.sleep(30)
+    time.sleep(86400) #checks once per day 86,400 sec
